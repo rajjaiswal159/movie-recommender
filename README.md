@@ -35,11 +35,16 @@ The recommendation engine calculates the "distance" between movies in a high-dim
 <h1>📂 Project Structure</h1>
 
 ```
-├── models/               # Saved ML artifacts (.pkl files)
+├── models/               
+      ├── movie_dict.pkl  # store movie index
+      ├── movies_data.pkl # store movie data
+      ├── vectorizer.pkl  # store vectorizer model
+      ├── vectors.pkl     # store vectors
 ├── main.py               # FastAPI Backend
-├── index.html            # Frontend Entry Point
-├── style.css             # UI Styling & Media Queries
-├── script.js             # Frontend Logic & API Fetching
+├── frontend/
+      ├── index.html      # HTML file
+      ├── style.css       # CSS file 
+      ├── script.js       # JS file
 └── Movie_Recommendation.ipynb # Data Science & Model Training Notebook
 ```
 
