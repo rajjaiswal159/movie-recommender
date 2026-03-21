@@ -43,11 +43,24 @@ The recommendation engine calculates the "distance" between movies in a high-dim
 └── Movie_Recommendation.ipynb # Data Science & Model Training Notebook
 ```
 
-⚙️ Setup & Installation1. Clone the RepositoryBashgit clone https://github.com/your-username/movie-recommender.git
+<h1>⚙️ Setup & Installation</h1>
+
+<h2>1. Clone the Repository</h2>
+
+```
+git clone https://github.com/rajjaiswal159/movie-recommender.git
 cd movie-recommender
-2. Set Up the BackendEnsure you have Python 3.8+ installed.Bash# Install dependencies
+```
+<h2>2. Set Up the Backend</h2>
+Ensure you have Python 3.8+ installed.
+
+```
+# Install dependencies
 pip install fastapi uvicorn scikit-learn pandas joblib
 
 # Run the API
 uvicorn main:app --reload
-The API will be available at http://127.0.0.1:8000.3. Launch the FrontendSimply open index.html in your preferred web browser. Ensure the backend is running so the data can load.📊 Model TrainingIf you wish to retrain the model:Open Movie_Recommendation.ipynb.Ensure you have the tmdb_5000_movies.csv and tmdb_5000_credits.csv files.Run all cells to export the updated vectorizer.pkl, vectors.pkl, and movies_data.pkl into the models/ folder.
+```
+The API will be available at http://127.0.0.1:8000.
+<h2>3. Launch the Frontend</h2>
+Simply open index.html in your preferred web browser. Ensure the backend is running so the data can load.
