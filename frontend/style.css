@@ -248,19 +248,19 @@ body {
 
   /* Movie Grid */
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
     padding: 12px;
   }
 
   /* Movie Card */
   .movie-card img {
-    height: 280px;
+    height: 320px;
     border-radius: 10px;
   }
 
   .movie-title {
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 10px;
   }
 }
