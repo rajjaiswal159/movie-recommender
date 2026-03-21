@@ -45,7 +45,7 @@ The recommendation engine calculates the "distance" between movies in a high-dim
       ├── index.html      # HTML file
       ├── style.css       # CSS file 
       ├── script.js       # JS file
-└── Movie_Recommendation.ipynb # Data Science & Model Training Notebook
+└── Movie_Recommendation.ipynb # Data Cleaning & Model Training Notebook
 ```
 
 <h1>⚙️ Setup & Installation</h1>
