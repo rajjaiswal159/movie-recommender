@@ -66,6 +66,6 @@ pip install fastapi uvicorn scikit-learn pandas joblib
 # Run the API
 uvicorn main:app --reload
 ```
-The API will be available at http://127.0.0.1:8000.
+The API will be available at [http://127.0.0.1:8000](https://movie-api-c0f7.onrender.com).
 <h2>3. Launch the Frontend</h2>
 Simply open index.html in your preferred web browser. Ensure the backend is running so the data can load.
