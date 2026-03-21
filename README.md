@@ -24,7 +24,13 @@ MovieFlix is a full-stack web application that provides intelligent movie recomm
 ● <b>Algorithm:</b> Content-Based Filtering.<br>
 ● <b>NLP:</b> Text preprocessing (removing punctuation, lowercasing, space collapsing) and TF-IDF to convert movie "tags" into numerical vectors.<br>
   
-📐 How It WorksThe recommendation engine calculates the "distance" between movies in a high-dimensional vector space.Feature Engineering: A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.Vectorization: The engine uses $TF-IDF$ (Term Frequency-Inverse Document Frequency) to weigh the importance of specific words across the dataset.Similarity: When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others:$$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$Ranking: The top $N$ movies with the highest similarity scores are returned to the UI.📂 Project StructurePlaintext├── models/               # Saved ML artifacts (.pkl files)
+<h1>📐 How It Works</h2>
+
+The recommendation engine calculates the "distance" between movies in a high-dimensional vector space.<br>
+<b>1. Feature Engineering:</b> A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.<br>
+<b>2. Vectorization:</b> The engine uses $TF-IDF$ (Term Frequency-Inverse Document Frequency) to weigh the importance of specific words across the dataset.<br>
+<b>3. Similarity:</b> When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others:
+<br>$$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$Ranking: The top $N$ movies with the highest similarity scores are returned to the UI.📂 Project StructurePlaintext├── models/               # Saved ML artifacts (.pkl files)
 ├── main.py               # FastAPI Backend
 ├── index.html            # Frontend Entry Point
 ├── style.css             # UI Styling & Media Queries
