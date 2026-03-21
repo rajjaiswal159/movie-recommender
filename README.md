@@ -12,9 +12,19 @@ MovieFlix is a full-stack web application that provides intelligent movie recomm
 
 <h1>🛠️ Tech Stack</h1>
 
-<h2>Frontend</h1>
-● <b>HTML5 & CSS3:</b> Custom-built responsive grid and hero sections.
-● <b>JavaScript (Vanilla):</b> Asynchronous API handling and DOM manipulation.BackendFastAPI: High-performance Python framework for building the REST API.Scikit-Learn: Powering the TF-IDF Vectorization and Cosine Similarity calculations.Joblib: For efficient serialization and loading of ML models.Machine Learning (The Engine)Dataset: TMDB 5000 Movies & Credits.Algorithm: Content-Based Filtering.NLP: Text preprocessing (removing punctuation, lowercasing, space collapsing) and TF-IDF to convert movie "tags" into numerical vectors.📐 How It WorksThe recommendation engine calculates the "distance" between movies in a high-dimensional vector space.Feature Engineering: A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.Vectorization: The engine uses $TF-IDF$ (Term Frequency-Inverse Document Frequency) to weigh the importance of specific words across the dataset.Similarity: When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others:$$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$Ranking: The top $N$ movies with the highest similarity scores are returned to the UI.📂 Project StructurePlaintext├── models/               # Saved ML artifacts (.pkl files)
+<h2>Frontend</h2>
+● <b>HTML5 & CSS3:</b> Custom-built responsive grid and hero sections.<br>
+● <b>JavaScript (Vanilla):</b> Asynchronous API handling and DOM manipulation.<br>
+</h2>Backend</h2>
+● <b>FastAPI:</b> High-performance Python framework for building the REST API.<br>
+● <b>Scikit-Learn:</b> Powering the TF-IDF Vectorization and Cosine Similarity calculations.<br>
+● <b>Joblib:</b> For efficient serialization and loading of ML models.<br>
+<h2>Machine Learning (The Engine)</h2>
+● <b>Dataset:</b> TMDB 5000 Movies & Credits.<br>
+● <b>Algorithm:</b> Content-Based Filtering.<br>
+● <b>NLP:</b> Text preprocessing (removing punctuation, lowercasing, space collapsing) and TF-IDF to convert movie "tags" into numerical vectors.<br>
+  
+📐 How It WorksThe recommendation engine calculates the "distance" between movies in a high-dimensional vector space.Feature Engineering: A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.Vectorization: The engine uses $TF-IDF$ (Term Frequency-Inverse Document Frequency) to weigh the importance of specific words across the dataset.Similarity: When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others:$$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$Ranking: The top $N$ movies with the highest similarity scores are returned to the UI.📂 Project StructurePlaintext├── models/               # Saved ML artifacts (.pkl files)
 ├── main.py               # FastAPI Backend
 ├── index.html            # Frontend Entry Point
 ├── style.css             # UI Styling & Media Queries
