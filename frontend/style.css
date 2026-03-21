@@ -6,13 +6,18 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #0f0f0f;
   color: #fff;
+  font-size: 16px;
 }
 
 
-/* Navigation bar layout and search input */
+/* Navigation bar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -26,6 +31,12 @@ body {
 
 .navbar h2 {
   color: #e50914;
+  font-size: 24px;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
 }
 
 .navbar input {
@@ -36,8 +47,22 @@ body {
   outline: none;
 }
 
+.search-box button {
+  padding: 10px 15px;
+  border: none;
+  background: #e50914;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-/* Hero section for selected movie details */
+.search-box button:hover {
+  background: #ff1f1f;
+}
+
+
+/* Hero section */
 .hero {
   display: flex;
   gap: 40px;
@@ -62,17 +87,18 @@ body {
 .hero-content p {
   margin: 10px 0;
   color: #ccc;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 
-/* Section heading styling */
+/* Section title */
 .section-title {
   margin: 20px 40px;
+  font-size: 22px;
 }
 
 
-/* Responsive movie grid layout */
+/* Movie grid */
 .grid {
   display: grid;
   gap: 20px;
@@ -81,7 +107,7 @@ body {
 }
 
 
-/* Individual movie card styling */
+/* Movie card */
 .movie-card {
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -90,6 +116,11 @@ body {
 .movie-card:hover {
   transform: scale(1.08);
   z-index: 2;
+}
+
+/* Tap feedback for mobile */
+.movie-card:active {
+  transform: scale(0.95);
 }
 
 .movie-card img {
@@ -107,7 +138,7 @@ body {
 }
 
 
-/* Tablet layout adjustments */
+/* Tablet */
 @media (max-width: 1024px) {
 
   .grid {
@@ -126,7 +157,7 @@ body {
 }
 
 
-/* Mobile layout adjustments */
+/* Mobile */
 @media (max-width: 768px) {
 
   .hero {
@@ -154,36 +185,76 @@ body {
 }
 
 
-/* Small mobile optimizations */
+/* Improved Mobile (<=600px) */
 @media (max-width: 600px) {
 
   .navbar {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     padding: 15px;
+  }
+
+  .navbar h2 {
+    font-size: 22px;
   }
 
   .navbar input {
     width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .search-box {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .search-box button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+
+  .hero img {
+    width: 180px;
+  }
+
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .section-title {
+    margin: 10px 15px;
+    font-size: 18px;
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
     padding: 10px;
   }
 
   .movie-card img {
-    height: 220px;
+    height: 240px;
   }
 
   .movie-title {
-    font-size: 12px;
+    font-size: 13px;
+    margin-top: 8px;
   }
 }
 
 
-/* Extra small screens */
+/* Extra small phones */
 @media (max-width: 400px) {
 
   .grid {
@@ -191,32 +262,20 @@ body {
   }
 
   .movie-card img {
-    height: 250px;
+    height: 280px;
+  }
+
+  .hero img {
+    width: 160px;
+  }
+
+  .hero-content h1 {
+    font-size: 20px;
   }
 }
 
 
-/* Search box layout and button styling */
-.search-box {
-  display: flex;
-  gap: 8px;
-}
-
-.search-box button {
-  padding: 10px 15px;
-  border: none;
-  background: #e50914;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.search-box button:hover {
-  background: #ff1f1f;
-}
-
-
-/* Logo interaction styling */
+/* Logo */
 .logo {
   cursor: pointer;
   color: #e50914;
