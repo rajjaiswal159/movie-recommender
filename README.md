@@ -36,10 +36,10 @@ The recommendation engine calculates the "distance" between movies in a high-dim
 
 ```
 ├── models/               
-      ├── movie_dict.pkl  # store movie index
-      ├── movies_data.pkl # store movie data
+      ├── movie_dict.pkl  # store movies index
+      ├── movies_data.pkl # store movies data
       ├── vectorizer.pkl  # store vectorizer model
-      ├── vectors.pkl     # store vectors
+      ├── vectors.pkl     # store encoded vectors
 ├── main.py               # FastAPI Backend
 ├── frontend/
       ├── index.html      # HTML file
