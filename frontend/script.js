@@ -17,10 +17,9 @@ function showLoader() {
 function goHome() {
   searchInput.value = "";
   detailsDiv.innerHTML = "";
-  sectionTitle.innerText = "🔥 Trending Movies";
 
   loadTopMovies();
-
+  sectionTitle.innerText = "🔥 Trending Movies";
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -32,13 +31,13 @@ function goHome() {
 async function loadTopMovies() {
   showLoader();
   detailsDiv.innerHTML = "";
-  sectionTitle.innerText = "🔥 Popular Movies";
 
   try {
     const res = await fetch(`${API_URL}/top-movies?n=25`);
     const data = await res.json();
 
     displayMovies(data.movies);
+    sectionTitle.innerText = "🔥 Popular Movies";
   } catch (err) {
     container.innerHTML = "<p>Error loading movies</p>";
   }
@@ -81,13 +80,13 @@ async function searchMovie() {
   if (!query) return;
 
   detailsDiv.innerHTML = "";
-  sectionTitle.innerText = `🔍 Results for "${query}"`;
 
   showLoader();
 
   try {
     const res = await fetch(`${API_URL}/recommend?movie=${query}&n=25`);
     const data = await res.json();
+    sectionTitle.innerText = `🔍 Results for "${query}"`;
 
     displayMovies(data.recommendations);
   } catch (err) {
@@ -99,13 +98,13 @@ async function searchMovie() {
 // Fetch selected movie details and related recommendations
 async function getMovieDetails(title) {
   showLoader();
-  sectionTitle.innerText = "🎬 Related Movies";
 
   try {
     const res = await fetch(`${API_URL}/recommend?movie=${title}&n=10`);
     const data = await res.json();
-
+    
     const movie = data.movie;
+    sectionTitle.innerText = "🎬 Related Movies";
 
     // Render hero section if selected movie exists
     if (movie) {
