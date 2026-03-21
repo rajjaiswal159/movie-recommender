@@ -33,7 +33,7 @@ The recommendation engine calculates the "distance" between movies in a high-dim
 <b>4. Ranking:</b> The top N movies with the highest similarity scores are returned to the UI.<br>
 
 <h1>📂 Project Structure</h1>
-```Bash
+```
 ├── models/               # Saved ML artifacts (.pkl files)
 ├── main.py               # FastAPI Backend
 ├── index.html            # Frontend Entry Point
