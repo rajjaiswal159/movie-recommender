@@ -24,18 +24,22 @@ MovieFlix is a full-stack web application that provides intelligent movie recomm
 ● <b>Algorithm:</b> Content-Based Filtering.<br>
 ● <b>NLP:</b> Text preprocessing (removing punctuation, lowercasing, space collapsing) and TF-IDF to convert movie "tags" into numerical vectors.<br>
   
-<h1>📐 How It Works</h2>
+<h1>📐 How It Works</h1>
 
 The recommendation engine calculates the "distance" between movies in a high-dimensional vector space.<br>
 <b>1. Feature Engineering:</b> A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.<br>
 <b>2. Vectorization:</b> The engine uses $TF-IDF$ (Term Frequency-Inverse Document Frequency) to weigh the importance of specific words across the dataset.<br>
-<b>3. Similarity:</b> When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others:
-<br>$$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$Ranking: The top $N$ movies with the highest similarity scores are returned to the UI.📂 Project StructurePlaintext├── models/               # Saved ML artifacts (.pkl files)
+<b>3. Similarity:</b> When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others.<br>
+<b>4. Ranking:</b> The top N movies with the highest similarity scores are returned to the UI.<br>
+
+<h1>📂 Project Structure</h1>
+├── models/               # Saved ML artifacts (.pkl files)
 ├── main.py               # FastAPI Backend
 ├── index.html            # Frontend Entry Point
 ├── style.css             # UI Styling & Media Queries
 ├── script.js             # Frontend Logic & API Fetching
 └── Movie_Recommendation.ipynb # Data Science & Model Training Notebook
+
 ⚙️ Setup & Installation1. Clone the RepositoryBashgit clone https://github.com/your-username/movie-recommender.git
 cd movie-recommender
 2. Set Up the BackendEnsure you have Python 3.8+ installed.Bash# Install dependencies
