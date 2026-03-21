@@ -200,7 +200,7 @@ body {
 
   .navbar input {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     font-size: 16px;
   }
 
@@ -211,7 +211,7 @@ body {
 
   .search-box button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     font-size: 16px;
   }
 
@@ -225,30 +225,30 @@ body {
   }
 
   .hero-content h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .hero-content p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .section-title {
     margin: 10px 15px;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 18px;
     padding: 10px;
   }
 
   .movie-card img {
-    height: 240px;
+    height: 300px;
   }
 
   .movie-title {
-    font-size: 13px;
+    font-size: 16px;
     margin-top: 8px;
   }
 }
