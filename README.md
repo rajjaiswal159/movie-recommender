@@ -15,7 +15,7 @@ MovieFlix is a full-stack web application that provides intelligent movie recomm
 <h2>Frontend</h2>
 ● <b>HTML5 & CSS3:</b> Custom-built responsive grid and hero sections.<br>
 ● <b>JavaScript (Vanilla):</b> Asynchronous API handling and DOM manipulation.<br>
-</h2>Backend</h2>
+<h2>Backend</h2>
 ● <b>FastAPI:</b> High-performance Python framework for building the REST API.<br>
 ● <b>Scikit-Learn:</b> Powering the TF-IDF Vectorization and Cosine Similarity calculations.<br>
 ● <b>Joblib:</b> For efficient serialization and loading of ML models.<br>
