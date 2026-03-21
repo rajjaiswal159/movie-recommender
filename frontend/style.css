@@ -1,3 +1,190 @@
+/* Global reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  font-size: 16px;
+}
+
+
+/* Navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar h2 {
+  color: #e50914;
+  font-size: 24px;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+.navbar input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  width: 260px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  border: none;
+  background: #e50914;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-box button:hover {
+  background: #ff1f1f;
+}
+
+
+/* Hero section */
+.hero {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: linear-gradient(to right, #000, #111);
+}
+
+.hero img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  margin: 10px 0;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+
+/* Section title */
+.section-title {
+  margin: 20px 40px;
+  font-size: 22px;
+}
+
+
+/* Movie grid */
+.grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px 40px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+
+/* Movie card */
+.movie-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* Tap feedback for mobile */
+.movie-card:active {
+  transform: scale(0.95);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-title {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #ddd;
+  text-align: center;
+}
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    padding: 20px;
+  }
+
+  .hero {
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .hero img {
+    width: 250px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero img {
+    width: 200px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .section-title {
+    margin: 15px 20px;
+  }
+}
+
+
 /* Super Large Mobile UI */
 @media (max-width: 600px) {
 
