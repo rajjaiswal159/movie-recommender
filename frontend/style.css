@@ -165,36 +165,8 @@ body {
 }
 
 
-/* Mobile (medium) */
+/* 🔥 MOBILE (FOR ALL PHONES) */
 @media (max-width: 768px) {
-
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .hero img {
-    width: 220px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .hero-content h1 {
-    font-size: 28px;
-  }
-
-  .section-title {
-    margin: 15px 20px;
-  }
-}
-
-
-/* 🔥 SUPER MOBILE (BIG UI) */
-@media (max-width: 600px) {
 
   body {
     font-size: 18px;
@@ -230,60 +202,44 @@ body {
   }
 
   .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 20px 15px;
     gap: 18px;
   }
 
   .hero img {
-    width: 220px;
+    width: 240px;
   }
 
   .hero-content h1 {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .hero-content p {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .section-title {
     margin: 12px 15px;
-    font-size: 20px;
+    font-size: 22px;
   }
 
+  /* ✅ FORCE 2 PER ROW */
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 14px;
     padding: 12px;
   }
 
   .movie-card img {
-    height: 280px;
+    height: 260px;
+    border-radius: 12px;
   }
 
   .movie-title {
-    font-size: 15px;
-    margin-top: 10px;
-  }
-}
-
-
-/* Extra small phones */
-@media (max-width: 400px) {
-
-  .grid {
-    grid-template-columns: 1fr; /* BIG cards */
-  }
-
-  .movie-card img {
-    height: 300px;
-  }
-
-  .hero img {
-    width: 180px;
-  }
-
-  .hero-content h1 {
-    font-size: 22px;
+    font-size: 16px;
+    margin-top: 8px;
   }
 }
