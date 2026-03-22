@@ -253,12 +253,12 @@ body {
   }
 
   .movie-card img {
-    height: 320px; /* 🔥 MUCH BIGGER POSTERS */
+    height: 400px; /* 🔥 MUCH BIGGER POSTERS */
     border-radius: 16px;
   }
 
   .movie-title {
-    font-size: 17px;
-    margin-top: 10px;
+    font-size: 25px;
+    margin-top: 15px;
   }
 }
