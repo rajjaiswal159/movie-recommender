@@ -195,7 +195,7 @@ body {
   }
 
   .logo {
-    font-size: 40px; /* 🔥 BIG logo */
+    font-size: 44px; /* 🔥 BIG logo */
     text-align: center;
   }
 
@@ -208,7 +208,7 @@ body {
   .navbar input {
     flex: 1;
     padding: 20px;
-    font-size: 22px;
+    font-size: 24px;
     border-radius: 12px;
   }
 
