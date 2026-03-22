@@ -5,10 +5,10 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from difflib import get_close_matches
 
-# App Initialization
+# Application instance
 app = FastAPI(title="Movie Recommender API")
 
-# CORS Integration
+# Enable CORS for cross-origin frontend access
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -52,6 +52,14 @@ def format_movies(indices):
     return movies
 
 
+# Retrieve similarity scores for a given index
+def compute_similarity(idx):
+    try:
+        return SIM_MATRIX[idx]
+    except IndexError:
+        raise HTTPException(status_code=404, detail="Movie index not found")
+
+
 # Resolve movie index using exact or fuzzy matching
 def get_index_from_title(movie: str):
     if not movie or not movie.strip():
@@ -75,7 +83,7 @@ def recommend_movie(movie: str, n: int):
 
     if idx is not None:
         sim_scores = SIM_MATRIX[idx]
-        indices = np.argsort(sim_scores)[::-1][:n]
+        indices = np.argsort(sim_scores)[::-1][1:n+1]
 
         if len(indices) == 0:
             raise HTTPException(status_code=404, detail="No recommendations found")
@@ -129,4 +137,4 @@ def recommend(
     return {
         "movie": selected_movie,
         "recommendations": format_movies(indices)
-    }
+        }
