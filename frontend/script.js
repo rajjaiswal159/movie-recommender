@@ -86,7 +86,7 @@ async function searchMovie() {
   showLoader();
 
   try {
-    const res = await fetch(`${API_URL}/recommend?movie=${query}&n=25`);
+    const res = await fetch(`${API_URL}/recommend?movie=${encodeURIComponent(query)}&n=25`);
     const data = await res.json();
 
     displayMovies(data.recommendations);
@@ -102,7 +102,7 @@ async function getMovieDetails(title) {
   sectionTitle.innerText = "🎬 Related Movies";
 
   try {
-    const res = await fetch(`${API_URL}/recommend?movie=${title}&n=10`);
+    const res = await fetch(`${API_URL}/recommend?movie=${encodeURIComponent(title)}&n=10`);
     const data = await res.json();
 
     const movie = data.movie;
