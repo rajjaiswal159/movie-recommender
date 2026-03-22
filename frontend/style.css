@@ -178,117 +178,87 @@ body {
 /* ==============================
    📱 MOBILE RESPONSIVE
 ============================== */
+/* ==============================
+   📱 MOBILE (EXTRA LARGE UI)
+============================== */
 @media (max-width: 768px) {
 
   body {
-    font-size: 16px;
+    font-size: 18px; /* 🔥 bigger text overall */
   }
 
   /* Navbar */
   .navbar {
     flex-direction: column;
-    gap: 14px;
-    padding: 18px;
+    gap: 18px;
+    padding: 22px;
   }
 
   .logo {
-    font-size: 28px;
+    font-size: 34px; /* 🔥 BIG logo */
     text-align: center;
   }
 
   .search-box {
     width: 100%;
     display: flex;
-    gap: 10px;
+    gap: 12px;
   }
 
   .navbar input {
     flex: 1;
-    padding: 14px;
-    font-size: 16px;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 12px;
   }
 
   .search-box button {
-    padding: 14px;
-    font-size: 16px;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 12px;
   }
 
   /* Hero */
   .hero {
     flex-direction: column;
-    padding: 16px;
-    gap: 16px;
+    padding: 20px;
+    gap: 20px;
   }
 
   .hero img {
     width: 100%;
-    border-radius: 12px;
-  }
-
-  .hero-content {
-    max-width: 100%;
+    border-radius: 16px;
   }
 
   .hero-content h1 {
-    font-size: 22px;
+    font-size: 28px; /* 🔥 bigger title */
   }
 
   .hero-content p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 1.6;
   }
 
   /* Section */
   .section-title {
-    margin: 14px;
-    font-size: 20px;
-  }
-
-  /* ✅ ALWAYS 2 MOVIES PER ROW */
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    padding: 12px;
-  }
-
-  .movie-card img {
-    height: 260px;
-    border-radius: 12px;
-  }
-
-  .movie-title {
-    font-size: 14px;
-    margin-top: 6px;
-  }
-}
-
-/* ==============================
-   📱 EXTRA SMALL DEVICES
-============================== */
-@media (max-width: 400px) {
-
-  .logo {
+    margin: 18px;
     font-size: 24px;
   }
 
-  .navbar input {
-    font-size: 14px;
-  }
-
-  .search-box button {
-    font-size: 14px;
-    padding: 12px;
+  /* 🎬 2 BIG CARDS PER ROW */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 14px;
   }
 
   .movie-card img {
-    height: 220px;
+    height: 320px; /* 🔥 MUCH BIGGER POSTERS */
+    border-radius: 16px;
+  }
+
+  .movie-title {
+    font-size: 17px;
+    margin-top: 10px;
   }
 }
-
-/* ==============================
-   🧠 GLOBAL IMAGE FIX
-============================== */
-img {
-  max-width: 100%;
-  display: block;
-  }
