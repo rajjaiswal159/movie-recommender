@@ -247,18 +247,25 @@ body {
 
   /* 🎬 2 BIG CARDS PER ROW */
   .grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 14px;
+    gap: 12px;
+    padding: 12px;
   }
-
+  .movie-card { 
+    width:100%;
+  }
+   
   .movie-card img {
-    height: 400px; /* 🔥 MUCH BIGGER POSTERS */
-    border-radius: 16px;
+    height: auto;
+    width:100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 14px;
   }
 
   .movie-title {
-    font-size: 25px;
-    margin-top: 15px;
+    font-size: 18px;
+    margin-top: 8px;
   }
 }
