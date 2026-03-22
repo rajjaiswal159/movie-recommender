@@ -211,7 +211,7 @@ body {
   }
 
   .hero img {
-    width: 240px;
+    width: 300px;
   }
 
   .hero-content h1 {
@@ -236,7 +236,7 @@ body {
 
   .movie-card img {
     height: 260px;
-    width: 120px;
+    width: 300px;
     border-radius: 12px;
   }
 
