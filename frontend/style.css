@@ -14,7 +14,6 @@ html {
 
 body {
   background: #0f0f0f;
-  background: red;
   color: #fff;
   font-size: 16px;
 }
@@ -248,17 +247,17 @@ body {
 
   /* 🎬 2 BIG CARDS PER ROW */
   .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 12px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+    padding: 10px;
   }
   .movie-card { 
     width:100%;
   }
    
   .movie-card img {
-    height: auto;
+    height: auto !important;
     width:100%;
     aspect-ratio: 2/3;
     object-fit: cover;
