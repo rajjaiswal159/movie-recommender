@@ -163,19 +163,31 @@ body {
     padding: 12px;
   }
 
+  .navbar h2 {
+    font-size: 22px;
+  }
+
   .navbar input {
-    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .search-box button {
+    padding: 12px;
+    font-size: 14px;
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px 8px;
+    gap: 8px;              
+    padding: 10px 5px;     
   }
 
   .movie-card img {
-    height: 260px;          
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
   }
 
   .movie-title {
