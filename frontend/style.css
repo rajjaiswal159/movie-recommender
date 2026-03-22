@@ -181,7 +181,7 @@ body {
 /* ==============================
    📱 MOBILE (EXTRA LARGE UI)
 ============================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   body {
     font-size: 18px; /* 🔥 bigger text overall */
