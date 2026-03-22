@@ -39,7 +39,7 @@ def format_movies(indices):
             row = movies_df.iloc[i]
             movies.append({
                 "id": int(row["movie_id"]),
-                "title": row["title"],
+                "title": row["title"].title(),
                 "vote_average": float(row["vote_average"]),
                 "genres": row["genres"],
                 "runtime": int(row["runtime"]),
