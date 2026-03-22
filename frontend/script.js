@@ -1,4 +1,3 @@
-Can you apply my previous logic in js
 const API_URL = "https://movie-api-c0f7.onrender.com";
 
 // DOM references
