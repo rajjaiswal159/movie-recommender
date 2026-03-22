@@ -99,6 +99,7 @@ body {
 .hero-content h1 {
   font-size: 36px;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .hero-content p {
@@ -154,6 +155,7 @@ body {
   margin-top: 8px;
   color: #ddd;
   text-align: center;
+  text-transform: capitalize;
 }
 
 /* ==============================
