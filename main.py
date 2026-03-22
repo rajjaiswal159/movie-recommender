@@ -75,7 +75,7 @@ def recommend_movie(movie: str, n: int):
 
     if idx is not None:
         sim_scores = SIM_MATRIX[idx]
-        indices = np.argsort(sim_scores)[::-1][0:n]
+        indices = np.argsort(sim_scores)[::-1][:n]
 
         if len(indices) == 0:
             raise HTTPException(status_code=404, detail="No recommendations found")
