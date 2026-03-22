@@ -7,19 +7,20 @@ const searchInput = document.getElementById("searchInput");
 const sectionTitle = document.getElementById("sectionTitle");
 
 
-// Display loading state inside movie container
+// 🔄 Loader
 function showLoader() {
   container.innerHTML = "<p>Loading...</p>";
 }
 
 
-// Reset UI to default homepage state
+// 🏠 Home reset
 function goHome() {
   searchInput.value = "";
   detailsDiv.innerHTML = "";
 
   loadTopMovies();
   sectionTitle.innerText = "🔥 Trending Movies";
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -27,7 +28,7 @@ function goHome() {
 }
 
 
-// Fetch and render top-ranked movies
+// 🎬 Load top movies
 async function loadTopMovies() {
   showLoader();
   detailsDiv.innerHTML = "";
@@ -38,13 +39,14 @@ async function loadTopMovies() {
 
     displayMovies(data.movies);
     sectionTitle.innerText = "🔥 Popular Movies";
+
   } catch (err) {
     container.innerHTML = "<p>Error loading movies</p>";
   }
 }
 
 
-// Render movie cards in grid container
+// 🎥 Display grid
 function displayMovies(movies) {
   container.innerHTML = "";
 
@@ -53,11 +55,11 @@ function displayMovies(movies) {
     card.className = "movie-card";
 
     card.innerHTML = `
-      <img src="${movie.poster}">
+      <img src="${movie.poster}" alt="${movie.title}">
       <div class="movie-title">${movie.title}</div>
     `;
 
-    // Fetch recommendations when a movie is clicked
+    // 👉 Click → show details + recommendations
     card.onclick = () => getMovieDetails(movie.title);
 
     container.appendChild(card);
@@ -65,7 +67,7 @@ function displayMovies(movies) {
 }
 
 
-// Trigger search on Enter key press
+// 🔍 Enter key search
 searchInput.addEventListener("keypress", function(e) {
   if (e.key === "Enter") {
     searchMovie();
@@ -73,44 +75,46 @@ searchInput.addEventListener("keypress", function(e) {
 });
 
 
-// Fetch recommendations based on user query
+// 🔍 SEARCH → ONLY GRID (no hero)
 async function searchMovie() {
   const query = searchInput.value.trim();
-
   if (!query) return;
 
-  detailsDiv.innerHTML = "";
-
   showLoader();
+  detailsDiv.innerHTML = ""; // ❌ remove hero
 
   try {
     const res = await fetch(`${API_URL}/recommend?movie=${query}&n=25`);
     const data = await res.json();
+
     sectionTitle.innerText = `🔍 Results for "${query}"`;
 
+    // ✅ ONLY grid
     displayMovies(data.recommendations);
+
   } catch (err) {
     container.innerHTML = "<p>No results found</p>";
   }
 }
 
 
-// Fetch selected movie details and related recommendations
+// 🎬 CLICK MOVIE → HERO + RELATED
 async function getMovieDetails(title) {
   showLoader();
 
   try {
     const res = await fetch(`${API_URL}/recommend?movie=${title}&n=10`);
     const data = await res.json();
-    
+
     const movie = data.movie;
+
     sectionTitle.innerText = "🎬 Related Movies";
 
-    // Render hero section if selected movie exists
+    // ✅ HERO SECTION
     if (movie) {
       detailsDiv.innerHTML = `
         <div class="hero">
-          <img src="${movie.poster}">
+          <img src="${movie.poster}" alt="${movie.title}">
           <div class="hero-content">
             <h1>${movie.title}</h1>
             <p><b>⭐ Rating:</b> ${movie.vote_average}</p>
@@ -123,7 +127,13 @@ async function getMovieDetails(title) {
       `;
     }
 
+    // ✅ Related movies grid
     displayMovies(data.recommendations);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
 
   } catch (err) {
     detailsDiv.innerHTML = "<p>Error loading details</p>";
@@ -131,5 +141,5 @@ async function getMovieDetails(title) {
 }
 
 
-// Initial application load
+// 🚀 Initial load
 loadTopMovies();
