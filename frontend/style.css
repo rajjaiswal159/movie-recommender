@@ -187,7 +187,7 @@ body {
     border-radius: 12px;
   }
 
-  /* Hero (BIG like Netflix) */
+  /* Hero */
   .hero {
     flex-direction: column;
     align-items: center;
@@ -216,7 +216,7 @@ body {
     font-size: 26px;
   }
 
-  /* 🔥 OPTION 1: BIG CARDS (2 per row but HUGE) */
+  /* 🔥 2 BIG CARDS PER ROW */
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
@@ -224,7 +224,9 @@ body {
   }
 
   .movie-card img {
-    height: 320px;   /* 🔥 MUCH BIGGER */
+    width: 100%;
+    height: 340px;   /* 🔥 EXTRA BIG */
+    object-fit: cover;
     border-radius: 16px;
   }
 
@@ -232,4 +234,4 @@ body {
     font-size: 19px;
     margin-top: 10px;
   }
-  }
+}
