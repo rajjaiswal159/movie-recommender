@@ -16,6 +16,11 @@ body {
   font-size: 16px;
 }
 
+/* Container (center layout) */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
 
 /* Navbar */
 .navbar {
@@ -70,7 +75,6 @@ body {
   background: #ff1f1f;
 }
 
-
 /* Hero section */
 .hero {
   display: flex;
@@ -99,13 +103,11 @@ body {
   line-height: 1.6;
 }
 
-
 /* Section title */
 .section-title {
   margin: 20px 40px;
   font-size: 22px;
 }
-
 
 /* Movie grid */
 .grid {
@@ -114,7 +116,6 @@ body {
   padding: 20px 40px;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
-
 
 /* Movie card */
 .movie-card {
@@ -145,10 +146,8 @@ body {
   text-align: center;
 }
 
-
 /* Tablet */
 @media (max-width: 1024px) {
-
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     padding: 20px;
@@ -164,8 +163,7 @@ body {
   }
 }
 
-
-/* 🔥 MOBILE (FOR ALL PHONES) */
+/* 🔥 MOBILE (ALL PHONES) */
 @media (max-width: 768px) {
 
   body {
@@ -226,9 +224,9 @@ body {
     font-size: 22px;
   }
 
-  /* ✅ FORCE 2 PER ROW */
+  /* ✅ ALWAYS 2 PER ROW */
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 14px;
     padding: 12px;
   }
@@ -241,5 +239,20 @@ body {
   .movie-title {
     font-size: 16px;
     margin-top: 8px;
+  }
+}
+
+/* Small phones tweak (still 2 per row) */
+@media (max-width: 400px) {
+  .movie-card img {
+    height: 240px;
+  }
+
+  .hero img {
+    width: 180px;
+  }
+
+  .hero-content h1 {
+    font-size: 22px;
   }
 }
