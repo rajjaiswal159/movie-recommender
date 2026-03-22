@@ -154,18 +154,18 @@ body {
 @media (max-width: 768px) {
 
   body {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   /* Navbar */
   .navbar {
     flex-direction: column;
-    gap: 16px;
-    padding: 18px;
+    gap: 18px;
+    padding: 20px;
   }
 
   .logo {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .search-box {
@@ -175,74 +175,61 @@ body {
 
   .navbar input {
     width: 100%;
-    padding: 16px;
-    font-size: 18px;
-    border-radius: 10px;
+    padding: 18px;
+    font-size: 19px;
+    border-radius: 12px;
   }
 
   .search-box button {
     width: 100%;
-    padding: 16px;
-    font-size: 18px;
-    border-radius: 10px;
+    padding: 18px;
+    font-size: 19px;
+    border-radius: 12px;
   }
 
-  /* Hero */
+  /* Hero (BIG like Netflix) */
   .hero {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 25px 15px;
     gap: 20px;
   }
 
   .hero img {
-    width: 85%;
-    max-width: 320px;
+    width: 90%;
+    max-width: 360px;
+    border-radius: 16px;
   }
 
   .hero-content h1 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .hero-content p {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   /* Section */
   .section-title {
-    margin: 16px;
-    font-size: 24px;
+    margin: 18px;
+    font-size: 26px;
   }
 
-  /* ✅ Bigger cards + flexible layout */
+  /* 🔥 OPTION 1: BIG CARDS (2 per row but HUGE) */
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 16px;
-    padding: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 14px;
   }
 
   .movie-card img {
-    height: 280px;
+    height: 320px;   /* 🔥 MUCH BIGGER */
+    border-radius: 16px;
   }
 
   .movie-title {
-    font-size: 18px;
+    font-size: 19px;
+    margin-top: 10px;
   }
-}
-
-/* Small phones */
-@media (max-width: 400px) {
-
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-
-  .movie-card img {
-    height: 250px;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-}
