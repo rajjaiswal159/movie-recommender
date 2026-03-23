@@ -141,4 +141,4 @@ async def recommend(
     return {
         "movie": selected_movie,
         "recommendations": format_movies(indices)
-        }
+    }
