@@ -4,6 +4,7 @@ import joblib
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from difflib import get_close_matches
+import asyncio
 
 # Application instance
 app = FastAPI(title="Movie Recommender API")
@@ -112,7 +113,7 @@ def home():
 
 # Fetch top-ranked movies for default UI
 @app.get("/top-movies")
-def get_top_movies(n: int = Query(10, ge=1, le=50)):
+async def get_top_movies(n: int = Query(10, ge=1, le=50)):
     try:
         top_movies = movies_df.sort_values(by="score", ascending=False).head(n)
         return {
@@ -124,11 +125,11 @@ def get_top_movies(n: int = Query(10, ge=1, le=50)):
 
 # Movie recommendation endpoint
 @app.get("/recommend")
-def recommend(
+async def recommend(
     movie: str = Query(..., description="Movie title"),
     n: int = Query(10, ge=1, le=50)
 ):
-    indices, idx = recommend_movie(movie, n)
+    indices, idx = await asyncio.to_thread(recommend_movie, movie, n)
 
     selected_movie = None
     if idx is not None:
