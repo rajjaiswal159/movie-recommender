@@ -126,7 +126,7 @@ async function getMovieDetails(title) {
       `;
     }
 
-    displayMovies(data.recommendations);
+    displayMovies(data.recommendations, true);
 
   } catch (err) {
     detailsDiv.innerHTML = "<p>Error loading details</p>";
