@@ -130,7 +130,8 @@ async def recommend(
     selected_movie = None
     if idx is not None:
         selected_movie = format_movies([idx])[0]
+        
     return {
         "movie": selected_movie,
-        "recommendations":format_movies(indices)
+        "recommendations": format_movies(indices)
     }
