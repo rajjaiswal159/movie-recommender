@@ -107,7 +107,7 @@ def recommend_movie(movie: str, n: int):
 
 # Health check endpoint
 @app.get("/")
-def home():
+async def home():
     return {"message": "Movie Recommendation API is running 🚀"}
 
 
@@ -115,11 +115,7 @@ def home():
 async def get_top_movies(n: int = Query(10, ge=1, le=50)):
     try:
         movies = await asyncio.to_thread(
-            lambda: format_movies(
-                movies_df.sort_values(by="score", ascending=False)
-                .head(n)
-                .index.tolist()
-            )
+            lambda: format_movies(movies_df.index[:n])
         )
         return {"movies": movies}
 
