@@ -112,9 +112,9 @@ async def home():
 
 
 @app.get("/top-movies")
-async def get_top_movies(n: int = Query(10, ge=1, le=50)):
+def get_top_movies(n: int = Query(10, ge=1, le=50)):
     try:
-        movies = await format_movies(list(range(n)))
+        movies = format_movies(list(range(n)))
         return {"movies": movies}
     except Exception:
         raise HTTPException(status_code=500, detail="Failed to fetch top movies")
@@ -132,5 +132,5 @@ async def recommend(
         selected_movie = format_movies([idx])[0]
     return {
         "movie": selected_movie,
-        "recommendations": await format_movies(indices)
+        "recommendations":format_movies(indices)
     }
