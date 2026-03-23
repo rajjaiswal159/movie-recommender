@@ -115,7 +115,11 @@ async def home():
 async def get_top_movies(n: int = Query(10, ge=1, le=50)):
     try:
         movies = await asyncio.to_thread(
-            lambda: format_movies(movies_df.index[:n])
+            lambda: format_movies(
+                movies_df.sort_values(by="score", ascending=False)
+                .head(n)
+                .index.tolist()
+            )
         )
         return {"movies": movies}
 
