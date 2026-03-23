@@ -111,17 +111,20 @@ def home():
     return {"message": "Movie Recommendation API is running 🚀"}
 
 
-# Fetch top-ranked movies for default UI
 @app.get("/top-movies")
 async def get_top_movies(n: int = Query(10, ge=1, le=50)):
     try:
-        top_movies = movies_df.sort_values(by="score", ascending=False).head(n)
-        return {
-            "movies": format_movies(top_movies.index.tolist())
-        }
+        movies = await asyncio.to_thread(
+            lambda: format_movies(
+                movies_df.sort_values(by="score", ascending=False)
+                .head(n)
+                .index.tolist()
+            )
+        )
+        return {"movies": movies}
+
     except Exception:
         raise HTTPException(status_code=500, detail="Failed to fetch top movies")
-
 
 # Movie recommendation endpoint
 @app.get("/recommend")
