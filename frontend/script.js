@@ -46,10 +46,12 @@ async function loadTopMovies() {
 
 
 // Render movie cards in grid container
-function displayMovies(movies) {
+function displayMovies(movies, skipFirst=false) {
   container.innerHTML = "";
 
-  movies.forEach(movie => {
+  const finalMovies = skipFirst ? movies.slice(1) : movies;
+  
+  finalMovies.forEach(movie => {
     const card = document.createElement("div");
     card.className = "movie-card";
 
