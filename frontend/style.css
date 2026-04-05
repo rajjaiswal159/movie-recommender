@@ -131,7 +131,7 @@ body {
   display: grid;
   gap: clamp(10px, 2vw, 20px);
   padding: clamp(10px, 3vw, 40px);
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 /* ==============================
