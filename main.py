@@ -105,12 +105,16 @@ def recommend_movie(movie: str, n: int):
         raise HTTPException(status_code=500, detail="Recommendation engine failed")
 
 
-# Health check endpoint
 @app.get("/")
 async def home():
     return {"message": "Movie Recommendation API is running 🚀"}
 
+# Health check endpoint
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
 
+# poupilar movies endpoint
 @app.get("/top-movies")
 def get_top_movies(n: int = Query(10, ge=1, le=50)):
     try:
