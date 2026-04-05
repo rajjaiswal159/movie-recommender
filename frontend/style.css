@@ -52,7 +52,9 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Search */
+/* ==============================
+   🔍 SEARCH
+============================== */
 .search-box {
   display: flex;
   gap: 10px;
@@ -133,7 +135,7 @@ body {
   display: grid;
   gap: clamp(10px, 2vw, 20px);
   padding: clamp(10px, 2vw, 20px);
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 /* ==============================
@@ -142,6 +144,7 @@ body {
 .movie-card {
   position: relative;
   cursor: pointer;
+  width: 100%;
   transition: transform 0.3s ease;
 }
 
@@ -203,16 +206,7 @@ body {
 }
 
 /* ==============================
-   🖥️ TABLET (≤1024px)
-============================== */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-}
-
-/* ==============================
-   📱 MOBILE (≤768px)
+   📱 MOBILE FIX (MOST IMPORTANT)
 ============================== */
 @media (max-width: 768px) {
 
@@ -233,35 +227,39 @@ body {
     max-width: 100%;
   }
 
+  /* 🔥 FORCE EXACTLY 2 CARDS */
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+    padding: 12px;
   }
 }
 
 /* ==============================
-   📱 SMALL PHONES (≤480px)
+   📱 SMALL PHONES
 ============================== */
 @media (max-width: 480px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .navbar input {
-    font-size: 14px;
-  }
-
-  .search-box button {
-    font-size: 14px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
   }
 }
 
 /* ==============================
-   🖥️ LARGE SCREENS (≥1400px)
+   🖥️ TABLET
+============================== */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+/* ==============================
+   🖥️ LARGE SCREENS
 ============================== */
 @media (min-width: 1400px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 
@@ -275,4 +273,4 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #e50914;
   border-radius: 10px;
-     }
+}
