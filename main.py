@@ -106,7 +106,7 @@ def recommend_movie(movie: str, n: int):
 
 
 @app.get("/")
-async def home():
+def home():
     return {"message": "Movie Recommendation API is running 🚀"}
 
 # Health check endpoint
