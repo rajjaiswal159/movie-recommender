@@ -160,6 +160,7 @@ body {
   margin-top: 6px;
   color: #ddd;
   text-align: center;
+  text-transform: capitalize;
 }
 
 /* ==============================
