@@ -1,272 +1,200 @@
 /* ==============================
-🌍 GLOBAL RESET
+   🌍 GLOBAL RESET
 ============================== */
-
-{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Segoe UI', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-background: #0f0f0f;
-color: #fff;
-font-size: 16px;
+  background: #0f0f0f;
+  color: #fff;
+  font-size: clamp(14px, 1.2vw, 18px);
 }
 
 /* ==============================
-📦 CONTAINER
+   📦 CONTAINER
 ============================== */
 .container {
-max-width: 1200px;
-margin: auto;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
 }
 
 /* ==============================
-🔝 NAVBAR (UPGRADED)
+   🔝 NAVBAR
 ============================== */
 .navbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 18px 40px;
-background: linear-gradient(to right, #111, #1a1a1a);
-position: sticky;
-top: 0;
-z-index: 10;
-box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(12px, 2vw, 20px) clamp(16px, 4vw, 40px);
+  background: linear-gradient(to right, #111, #1a1a1a);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .logo {
-cursor: pointer;
-color: #e50914;
-font-size: 30px;
-font-weight: bold;
-letter-spacing: 1px;
+  cursor: pointer;
+  color: #e50914;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: bold;
 }
 
+/* Search */
 .search-box {
-display: flex;
-gap: 12px;
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  max-width: 500px;
 }
 
 .navbar input {
-padding: 12px 14px;
-border-radius: 8px;
-border: none;
-width: 300px;
-outline: none;
-font-size: 15px;
+  flex: 1;
+  padding: clamp(10px, 1.5vw, 14px);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: clamp(14px, 1.2vw, 16px);
 }
 
 .search-box button {
-padding: 12px 18px;
-border: none;
-background: #e50914;
-color: white;
-border-radius: 8px;
-cursor: pointer;
-font-weight: 600;
+  padding: clamp(10px, 1.5vw, 16px);
+  border: none;
+  background: #e50914;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .search-box button:hover {
-background: #ff1f1f;
+  background: #ff1f1f;
 }
 
 /* ==============================
-🎬 HERO SECTION
+   🎬 HERO SECTION
 ============================== */
 .hero {
-display: flex;
-gap: 40px;
-padding: 40px;
-background: linear-gradient(to right, #000, #111);
+  display: flex;
+  gap: clamp(16px, 3vw, 40px);
+  padding: clamp(16px, 3vw, 40px);
+  background: linear-gradient(to right, #000, #111);
+  flex-wrap: wrap;
 }
 
 .hero img {
-width: 300px;
-border-radius: 12px;
+  width: clamp(200px, 30%, 300px);
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .hero-content {
-max-width: 600px;
+  flex: 1;
+  min-width: 250px;
 }
 
 .hero-content h1 {
-font-size: 36px;
-margin-bottom: 10px;
-text-transform: capitalize;
+  font-size: clamp(24px, 3vw, 36px);
+  margin-bottom: 10px;
 }
 
 .hero-content p {
-margin: 10px 0;
-color: #ccc;
-line-height: 1.6;
+  margin: 8px 0;
+  color: #ccc;
+  line-height: 1.6;
+  font-size: clamp(14px, 1.2vw, 16px);
 }
 
 /* ==============================
-📌 SECTION TITLE
+   📌 SECTION TITLE
 ============================== */
 .section-title {
-margin: 20px 40px;
-font-size: 24px;
+  margin: clamp(16px, 3vw, 30px);
+  font-size: clamp(20px, 2.5vw, 26px);
 }
 
 /* ==============================
-🎞️ MOVIE GRID
+   🎞️ MOVIE GRID
 ============================== */
 .grid {
-display: grid;
-gap: 20px;
-padding: 20px 40px;
-grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: grid;
+  gap: clamp(10px, 2vw, 20px);
+  padding: clamp(10px, 3vw, 40px);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 /* ==============================
-🎥 MOVIE CARD
+   🎥 MOVIE CARD
 ============================== */
 .movie-card {
-cursor: pointer;
-transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .movie-card:hover {
-transform: scale(1.08);
-}
-
-.movie-card:active {
-transform: scale(0.96);
+  transform: scale(1.05);
 }
 
 .movie-card img {
-width: 100%;
-height: 320px;
-object-fit: cover;
-border-radius: 14px;
-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
 .movie-title {
-font-size: 16px;
-margin-top: 8px;
-color: #ddd;
-text-align: center;
-text-transform: capitalize;
+  font-size: clamp(14px, 1.5vw, 16px);
+  margin-top: 6px;
+  color: #ddd;
+  text-align: center;
 }
 
 /* ==============================
-⏳ LOADER
+   ⏳ LOADER
 ============================== */
 .loader {
-border: 5px solid #333;
-border-top: 5px solid #e50914;
-border-radius: 50%;
-width: 40px;
-height: 40px;
-margin: auto;
-animation: spin 1s linear infinite;
+  border: 5px solid #333;
+  border-top: 5px solid #e50914;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 50px auto;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-100% {
-transform: rotate(360deg);
-}
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* ==============================
-📱 MOBILE RESPONSIVE
+   📱 SMALL DEVICES FIX
 ============================== */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 
-body {
-font-size: 18px; /* 🔥 bigger text overall */
-}
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* Navbar */
-.navbar {
-flex-direction: column;
-gap: 18px;
-padding: 22px;
-}
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-.logo {
-font-size: 44px; /* 🔥 BIG logo */
-text-align: center;
-}
-
-.search-box {
-width: 100%;
-display: flex;
-gap: 12px;
-}
-
-.navbar input {
-flex: 1;
-padding: 20px;
-font-size: 24px;
-border-radius: 12px;
-}
-
-.search-box button {
-padding: 20px;
-font-size: 20px;
-border-radius: 12px;
-}
-
-/* Hero */
-.hero {
-flex-direction: column;
-padding: 20px;
-gap: 20px;
-}
-
-.hero img {
-width: 100%;
-border-radius: 16px;
-}
-
-.hero-content h1 {
-font-size: 28px; /* 🔥 bigger title */
-}
-
-.hero-content p {
-font-size: 17px;
-line-height: 1.6;
-}
-
-/* Section */
-.section-title {
-margin: 18px;
-font-size: 24px;
-}
-
-/* 🎬 2 BIG CARDS PER ROW */
-.grid {
-display: grid !important;
-grid-template-columns: repeat(2, 1fr) !important;
-gap: 10px;
-padding: 10px;
-}
-.movie-card {
-width:100%;
-}
-
-.movie-card img {
-height: auto !important;
-width:100%;
-aspect-ratio: 2/3;
-object-fit: cover;
-border-radius: 14px;
-}
-
-.movie-title {
-font-size: 18px;
-margin-top: 8px;
-}
+  .search-box {
+    width: 100%;
+  }
 }
