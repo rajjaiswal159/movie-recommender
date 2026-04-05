@@ -41,6 +41,8 @@ The recommendation engine calculates the "distance" between movies in a high-dim
       ├── vectorizer.pkl  # store Tf-Idf vectorizer model
       ├── vectors.pkl     # store encoded vectors
 ├── main.py               # FastAPI Backend
+├── requirements.txt      # Requirements
+├── Procfile              # For API deployment 
 ├── frontend/
       ├── index.html      # HTML file
       ├── style.css       # CSS file 
