@@ -12,6 +12,8 @@ MovieFlix is a full-stack web application that provides intelligent movie recomm
 - <b>Detailed View:</b> Provides metadata for selected movies, including ratings, runtime, and plot summaries.
 - <b>Responsive UI:</b> Fully optimized for Desktop, Tablet, and Mobile devices.
 
+---
+
 ### 🛠️ Tech Stack
 
 ### Frontend
@@ -27,14 +29,22 @@ MovieFlix is a full-stack web application that provides intelligent movie recomm
 - <b>Dataset:</b> TMDB 5000 Movies & Credits.
 - <b>Algorithm:</b> Content-Based Filtering.
 - <b>NLP:</b> Text preprocessing (removing punctuation, lowercasing, space collapsing) and TF-IDF to convert movie "tags" into numerical vectors.
-  
+
+---
+
 ## 📐 How It Works
 
-The recommendation engine calculates the "distance" between movies in a high-dimensional vector space.<br>
-<b>1. Feature Engineering:</b> A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.<br>
-<b>2. Vectorization:</b> The engine uses $TF-IDF$ (Term Frequency-Inverse Document Frequency) to weigh the importance of specific words across the dataset.<br>
-<b>3. Similarity:</b> When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others.<br>
-<b>4. Ranking:</b> The top N movies with the highest similarity scores are returned to the UI.<br>
+The recommendation engine calculates the "distance" between movies in a high-dimensional vector space.
+
+<b>1. Feature Engineering:</b> A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.
+
+<b>2. Vectorization:</b> The engine uses $TF-IDF$ (Term Frequency-Inverse Document Frequency) to weigh the importance of specific words across the dataset.
+
+<b>3. Similarity:</b> When a user selects a movie, the system calculates the Cosine Similarity between that movie's vector and all others.
+
+<b>4. Ranking:</b> The top N movies with the highest similarity scores are returned to the UI.
+
+---
 
 <h1>📂 Project Structure</h1>
 
