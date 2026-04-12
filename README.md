@@ -1,14 +1,16 @@
-<h1>🎬 MovieFlix: AI-Powered Movie Recommender</h1>
+# 🎬 MovieFlix: AI-Powered Movie Recommender
 
 MovieFlix is a full-stack web application that provides intelligent movie recommendations using Machine Learning. It combines a sleek, responsive frontend with a FastAPI backend and a Content-Based Filtering engine trained on the TMDB 5000 dataset.
 
-<h1>🚀 Features</h1>
+---
 
-● <b>Intelligent Search:</b> Find movies using exact titles or fuzzy matching (handles typos).<br>
-● <b>Dynamic Recommendations:</b> Provides "Related Movies" based on overview, genres, keywords, cast, and crew.<br>
-● <b>Trending Section:</b> Displays top-ranked movies calculated via a weighted rating formula.<br>
-● <b>Detailed View:</b> Provides metadata for selected movies, including ratings, runtime, and plot summaries.<br>
-● <b>Responsive UI:</b> Fully optimized for Desktop, Tablet, and Mobile devices.
+## 🚀 Features
+
+- <b>Intelligent Search:</b> Find movies using exact titles or fuzzy matching (handles typos).
+- <b>Dynamic Recommendations:</b> Provides "Related Movies" based on overview, genres, keywords, cast, and crew.<br>
+- <b>Trending Section:</b> Displays top-ranked movies calculated via a weighted rating formula.<br>
+- <b>Detailed View:</b> Provides metadata for selected movies, including ratings, runtime, and plot summaries.<br>
+- <b>Responsive UI:</b> Fully optimized for Desktop, Tablet, and Mobile devices.
 
 <h1>🛠️ Tech Stack</h1>
 
