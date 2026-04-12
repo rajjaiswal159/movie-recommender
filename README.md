@@ -46,8 +46,7 @@ The recommendation engine calculates the "distance" between movies in a high-dim
 
 ---
 
-<h1>📂 Project Structure</h1>
-
+## 📂 Project Structure
 ```
 ├── models/               
       ├── movie_dict.pkl  # store movies index
@@ -64,17 +63,18 @@ The recommendation engine calculates the "distance" between movies in a high-dim
 └── Movie_Recommendation.ipynb # Data Cleaning & Model Training Notebook
 ```
 
-<h1>⚙️ Setup & Installation</h1>
+---
 
-<h2>1. Clone the Repository</h2>
+## ⚙️ Setup & Installation
 
+### 1. Clone the Repository
 ```
 git clone https://github.com/rajjaiswal159/movie-recommender.git
 cd movie-recommender
 ```
-<h2>2. Set Up the Backend</h2>
-Ensure you have Python 3.8+ installed.
 
+### 2. Set Up the Backend
+Ensure you have Python 3.8+ installed.
 ```
 # Install dependencies
 pip install fastapi uvicorn scikit-learn pandas joblib
@@ -83,5 +83,6 @@ pip install fastapi uvicorn scikit-learn pandas joblib
 uvicorn main:app --reload
 ```
 The API will be available at [http://127.0.0.1:8000](https://movie-api-c0f7.onrender.com).
-<h2>3. Launch the Frontend</h2>
+
+### 3. Launch the Frontend
 Simply open index.html in your preferred web browser. Ensure the backend is running so the data can load.
