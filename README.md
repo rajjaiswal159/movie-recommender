@@ -7,26 +7,28 @@ MovieFlix is a full-stack web application that provides intelligent movie recomm
 ## 🚀 Features
 
 - <b>Intelligent Search:</b> Find movies using exact titles or fuzzy matching (handles typos).
-- <b>Dynamic Recommendations:</b> Provides "Related Movies" based on overview, genres, keywords, cast, and crew.<br>
-- <b>Trending Section:</b> Displays top-ranked movies calculated via a weighted rating formula.<br>
-- <b>Detailed View:</b> Provides metadata for selected movies, including ratings, runtime, and plot summaries.<br>
+- <b>Dynamic Recommendations:</b> Provides "Related Movies" based on overview, genres, keywords, cast, and crew.
+- <b>Trending Section:</b> Displays top-ranked movies calculated via a weighted rating formula.
+- <b>Detailed View:</b> Provides metadata for selected movies, including ratings, runtime, and plot summaries.
 - <b>Responsive UI:</b> Fully optimized for Desktop, Tablet, and Mobile devices.
 
-<h1>🛠️ Tech Stack</h1>
+### 🛠️ Tech Stack
 
-<h2>Frontend</h2>
-● <b>HTML5 & CSS3:</b> Custom-built responsive grid and hero sections.<br>
-● <b>JavaScript (Vanilla):</b> Asynchronous API handling and DOM manipulation.<br>
-<h2>Backend</h2>
-● <b>FastAPI:</b> High-performance Python framework for building the REST API.<br>
-● <b>Scikit-Learn:</b> Powering the TF-IDF Vectorization and Cosine Similarity calculations.<br>
-● <b>Joblib:</b> For efficient serialization and loading of ML models.<br>
-<h2>Machine Learning (The Engine)</h2>
-● <b>Dataset:</b> TMDB 5000 Movies & Credits.<br>
-● <b>Algorithm:</b> Content-Based Filtering.<br>
-● <b>NLP:</b> Text preprocessing (removing punctuation, lowercasing, space collapsing) and TF-IDF to convert movie "tags" into numerical vectors.<br>
+### Frontend
+- <b>HTML5 & CSS3:</b> Custom-built responsive grid and hero sections.
+- <b>JavaScript (Vanilla):</b> Asynchronous API handling and DOM manipulation.
+- 
+### Backend
+- <b>FastAPI:</b> High-performance Python framework for building the REST API.
+- <b>Scikit-Learn:</b> Powering the TF-IDF Vectorization and Cosine Similarity calculations.
+- <b>Joblib:</b> For efficient serialization and loading of ML models.
+- 
+### Machine Learning (The Engine)
+- <b>Dataset:</b> TMDB 5000 Movies & Credits.
+- <b>Algorithm:</b> Content-Based Filtering.
+- <b>NLP:</b> Text preprocessing (removing punctuation, lowercasing, space collapsing) and TF-IDF to convert movie "tags" into numerical vectors.
   
-<h1>📐 How It Works</h1>
+## 📐 How It Works
 
 The recommendation engine calculates the "distance" between movies in a high-dimensional vector space.<br>
 <b>1. Feature Engineering:</b> A "tags" column is created by merging movie overviews, genres, keywords, and top cast/crew names.<br>
