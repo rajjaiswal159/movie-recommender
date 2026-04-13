@@ -8,8 +8,18 @@ const sectionTitle = document.getElementById("sectionTitle");
 
 
 // Display loading state inside movie container
-function showLoader() {
-  container.innerHTML = "<p>Loading...</p>";
+let loaderTimeout;
+
+function showSmartLoader() {
+  // Show normal loader immediately
+  container.innerHTML = "<p>⏳ Loading...</p>";
+
+  // After 3 seconds, assume cold start
+  loaderTimeout = setTimeout(() => {
+    container.innerHTML = `
+      <p>🚀 Server is waking up, please wait ~30 seconds...</p>
+    `;
+  }, 3000);
 }
 
 
@@ -30,13 +40,15 @@ function goHome() {
 
 // Fetch and render top-ranked movies
 async function loadTopMovies() {
-  showLoader();
+  showSmartLoader();
   detailsDiv.innerHTML = "";
   sectionTitle.innerText = "🔥 Popular Movies";
 
   try {
     const res = await fetch(`${API_URL}/top-movies?n=25`);
     const data = await res.json();
+
+    clearTimeout(loaderTimeout);
 
     displayMovies(data.movies);
   } catch (err) {
@@ -85,11 +97,13 @@ async function searchMovie() {
   detailsDiv.innerHTML = "";
   sectionTitle.innerText = `🔍 Results for "${query}"`;
 
-  showLoader();
+  showSmartLoader();
 
   try {
     const res = await fetch(`${API_URL}/recommend?movie=${encodeURIComponent(query)}&n=25`);
     const data = await res.json();
+
+    clearTimeout(loaderTimeout);
 
     displayMovies(data.recommendations);
   } catch (err) {
@@ -100,12 +114,14 @@ async function searchMovie() {
 
 // Fetch selected movie details and related recommendations
 async function getMovieDetails(title) {
-  showLoader();
+  showSmartLoader();
   sectionTitle.innerText = "🎬 Related Movies";
 
   try {
     const res = await fetch(`${API_URL}/recommend?movie=${encodeURIComponent(title)}&n=10`);
     const data = await res.json();
+
+    clearTimeout(loaderTimeout);
 
     const movie = data.movie;
 
